@@ -21,4 +21,30 @@ public class Domiciliario {
     @Column(name = "ESTADO_OPERATIVO", nullable = false, length = 30)
     private String estadoOperativo;
 
+    public Long getIdDomiciliario() {
+        return idDomiciliario;
+    }
+
+    public void setIdDomiciliario(Long idDomiciliario) {
+        this.idDomiciliario = idDomiciliario;
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public String getEstadoOperativo() {
+        return estadoOperativo;
+    }
+
+    public void setEstadoOperativo(String estadoOperativo) {
+        this.estadoOperativo = estadoOperativo;
+    }
+
+    
+
 }
