@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class EstadoServicio {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     @Column(name = "ID_ESTADO_SERVICIO")
     private Long idEstado;
     @Column(name = "NOMBRE", nullable = false)
