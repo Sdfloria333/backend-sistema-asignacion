@@ -22,6 +22,7 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "ID_ESTADO")
+    private EstadoUsuario estado;
 
     @Column(name = "NOMBRE", nullable = false, length = 100)
     private String nombre;
@@ -41,6 +42,12 @@ public class Usuario {
 
     public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
+    }
+    public EstadoUsuario getEstado() {
+        return estado;
+    }
+    public void setEstado(EstadoUsuario estado) {
+        this.estado = estado;
     }
 
     public String getNombre() {

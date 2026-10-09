@@ -19,15 +19,15 @@ public class Servicio {
 
     @ManyToOne
     @Column(name = "ID_CENTRAL")
-    private Long idCentral;
+    private Central central;
 
     @ManyToOne
     @Column(name = "ID_DOMICILIARIO")
-    private Long idDomiciliario;
+    private Domiciliario domiciliario;
 
     @ManyToOne
     @Column(name = "ID_ESTADO_SERVICIO")
-    private Long idEstadoServicio;
+    private EstadoServicio estadoServicio;
 
     @Column(name = "RECOGIDA", nullable = false, length = 200)
     private String recogida;
@@ -43,28 +43,28 @@ public class Servicio {
         this.idServicio = idServicio;
     }
 
-    public Long getIdCentral() {
-        return idCentral;
+    public Central getCentral() {
+        return central;
     }
 
-    public void setIdCentral(Long idCentral) {
-        this.idCentral = idCentral;
+    public void setCentral(Central central) {
+        this.central = central;
     }
 
-    public Long getIdDomiciliario() {
-        return idDomiciliario;
+    public Domiciliario getDomiciliario() {
+        return domiciliario;
     }
 
-    public void setIdDomiciliario(Long idDomiciliario) {
-        this.idDomiciliario = idDomiciliario;
+    public void setDomiciliario(Domiciliario domiciliario) {
+        this.domiciliario = domiciliario;
     }
 
-    public Long getIdEstadoServicio() {
-        return idEstadoServicio;
+    public EstadoServicio getEstadoServicio() {
+        return estadoServicio;
     }
 
-    public void setIdEstadoServicio(Long idEstadoServicio) {
-        this.idEstadoServicio = idEstadoServicio;
+    public void setEstadoServicio(EstadoServicio estadoServicio) {
+        this.estadoServicio = estadoServicio;
     }
 
     public String getRecogida() {
