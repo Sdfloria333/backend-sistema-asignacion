@@ -1,11 +1,12 @@
 package com.sistema.domicilios.model;
 
-import org.springframework.data.annotation.Id;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity(name = "EntidadCentral")
@@ -17,8 +18,10 @@ public class Central {
     @Column(name = "ID_CENTRAL")
     private Long idCdentral;
 
+    @OneToOne
+    @JoinColumn(name = "ID_USUARIO", nullable = false, unique = true)
     @Column(name = "ID_USUARIO", nullable = false)
-    private Long idUsuario;
+    private Usuario usuario;
 
     public Long getIdCdentral() {
         return idCdentral;
@@ -28,12 +31,12 @@ public class Central {
         this.idCdentral = idCdentral;
     }
 
-    public Long getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
 }
