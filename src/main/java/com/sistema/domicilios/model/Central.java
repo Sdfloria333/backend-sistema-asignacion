@@ -20,7 +20,6 @@ public class Central {
 
     @OneToOne
     @JoinColumn(name = "ID_USUARIO", nullable = false, unique = true)
-    @Column(name = "ID_USUARIO", nullable = false)
     private Usuario usuario;
 
     public Long getIdCdentral() {

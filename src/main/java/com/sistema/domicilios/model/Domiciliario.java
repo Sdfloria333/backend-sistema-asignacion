@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity(name = "EntidadDomiciliario")
@@ -15,8 +17,9 @@ public class Domiciliario {
     @Column(name = "ID_DOMICILIARIO")
     private Long idDomiciliario;
 
-    @Column(name = "ID_USUARIO")
-    private Long idUsuario;
+    @OneToOne
+    @JoinColumn(name = "ID_USUARIO", nullable = false, unique = true)
+    private Usuario usuario;
 
     @Column(name = "ESTADO_OPERATIVO", nullable = false, length = 30)
     private String estadoOperativo;
@@ -29,12 +32,12 @@ public class Domiciliario {
         this.idDomiciliario = idDomiciliario;
     }
 
-    public Long getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public String getEstadoOperativo() {
@@ -44,7 +47,5 @@ public class Domiciliario {
     public void setEstadoOperativo(String estadoOperativo) {
         this.estadoOperativo = estadoOperativo;
     }
-
-    
 
 }
