@@ -19,7 +19,7 @@ public class Servicio {
     private Long idServicio;
 
     @ManyToOne
-    @JoinColumn(name = "ID_CENTRAL")
+    @JoinColumn(name = "ID_CENTRAL", nullable = false)
     private Central central;
 
     @ManyToOne
@@ -27,7 +27,7 @@ public class Servicio {
     private Domiciliario domiciliario;
 
     @ManyToOne
-    @JoinColumn(name = "ID_ESTADO_SERVICIO")
+    @JoinColumn(name = "ID_ESTADO_SERVICIO", nullable = false)
     private EstadoServicio estadoServicio;
 
     @Column(name = "RECOGIDA", nullable = false, length = 200)

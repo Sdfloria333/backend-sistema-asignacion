@@ -20,7 +20,7 @@ import com.sistema.domicilios.service.ServicioService;
 @RestController
 @RequestMapping("/api/servicios")
 @CrossOrigin(origins = "*")
-public class ServicioController {
+public class ServicioController {  
 
     private final ServicioService servicioService;
 

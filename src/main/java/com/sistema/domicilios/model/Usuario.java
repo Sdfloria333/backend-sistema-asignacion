@@ -27,14 +27,16 @@ public class Usuario {
     @Column(name = "NOMBRE", nullable = false, length = 100)
     private String nombre;
 
-    @Column(name = "TELEFONO", nullable = false, length = 20)
+    @Column(name = "TELEFONO", length = 20)
     private String telefono;
 
     @Column(name = "ROL", nullable = false, length = 30)
     private String rol;
 
-    @Column(name = "FECHA_cREACION", nullable = false, length = 6)
+    @Column(name = "FECHA_CREACION", nullable = false, updatable = false)
     private LocalDateTime fechaCreacion;
+
+    
 
     public Long getIdUsuario() {
         return idUsuario;
@@ -43,9 +45,11 @@ public class Usuario {
     public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
+
     public EstadoUsuario getEstado() {
         return estado;
     }
+
     public void setEstado(EstadoUsuario estado) {
         this.estado = estado;
     }

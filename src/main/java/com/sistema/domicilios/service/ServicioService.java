@@ -60,15 +60,22 @@ public class ServicioService {
         Servicio servicio = servicioRepository.findById(idServicio)
                 .orElseThrow(() -> new RuntimeException("Servicio no encontrado"));
 
+        if (servicio.getDomiciliario() != null) {
+            throw new RuntimeException("El servicio ya fue tomado por otro domiciliario");
+        }
+
         Domiciliario domiciliario = domiciliarioRepository.findById(idDomiciliario)
                 .orElseThrow(() -> new RuntimeException("Domiciliario no encontrado"));
+
+        if (!"DISPONIBLE".equals(domiciliario.getEstadoOperativo())) {
+            throw new RuntimeException("El domiciliario no está disponible");
+        }
 
         EstadoServicio estadoAsignado = estadoServicioRepository.findById(2L)
                 .orElseThrow(() -> new RuntimeException("Estado ASIGNADO no encontrado"));
 
         servicio.setDomiciliario(domiciliario);
         servicio.setEstadoServicio(estadoAsignado);
-
         return servicioRepository.save(servicio);
     }
 

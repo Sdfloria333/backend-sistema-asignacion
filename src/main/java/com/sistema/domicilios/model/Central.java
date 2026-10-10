@@ -16,18 +16,18 @@ public class Central {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_CENTRAL")
-    private Long idCdentral;
+    private Long idCentral;
 
     @OneToOne
     @JoinColumn(name = "ID_USUARIO", nullable = false, unique = true)
     private Usuario usuario;
 
-    public Long getIdCdentral() {
-        return idCdentral;
+    public Long getIdCentral() {
+        return idCentral;
     }
 
-    public void setIdCdentral(Long idCdentral) {
-        this.idCdentral = idCdentral;
+    public void setIdCentral(Long idCentral) {
+        this.idCentral = idCentral;
     }
 
     public Usuario getUsuario() {
